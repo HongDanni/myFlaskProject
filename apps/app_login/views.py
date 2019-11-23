@@ -20,7 +20,7 @@ def hello():
     return render_template('login/hello.html')
 
 
-@login_blue.route('/', methods=['post'])
+@login_blue.route('/user', methods=['post'])
 def login():
     data = request.form
     user = data['user']
@@ -36,7 +36,7 @@ def login():
         return jsonify({"code": 200, "msg": "username error"})
     # 判断密码是否正确（暂时不md5处理）
     user_info = get_users(user)
-    password = user_info['password']
+    password = user_info[0]['password']
     if password != pwd:
         return jsonify({'code': 200, 'msg': 'password error'})
 
