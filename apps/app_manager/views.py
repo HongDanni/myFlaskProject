@@ -1,6 +1,6 @@
 # -*-coding:utf8-*-
 from flask import Blueprint, render_template, request, jsonify
-from .model import get_users
+from .model import get_users, insert_user
 
 manager_blue = Blueprint('manager', __name__, template_folder='../../template', static_folder='../../static', url_prefix='/manager')
 
@@ -17,7 +17,6 @@ def manager_register():
     user = data['user']
     pwd = data['pwd']
     nick = data['nick']
-    return jsonify({'nick': nick})
 
     if not user:
         return jsonify({"code": 200, "msg": u"user parameter error"})
@@ -29,11 +28,8 @@ def manager_register():
     if len(user) != 0:
         return jsonify({"code": 200, "msg": u"user already exists"})
     # 没有即新增会员信息
-
-
-
-
-    pass  # 未完待续
+    affected = insert_user(user, pwd, nick)
+    return jsonify({'affected': affected})
 
 
 # 获取所有会员信息
