@@ -1,0 +1,21 @@
+# 创建数据库
+create database danni;
+# 切换数据库
+use danni;
+
+# girls表：包含用户信息
+create table if not exists `girls2`(
+    `id` int(11) unsigned auto_increment,
+    `name` varchar(255) not null,
+    `password` varchar(255) not null,
+    `nickname` varchar(255) default null,
+    `status` int(11) default 1000,
+    `updated_at` timestamp,
+    `created_at` timestamp,
+    primary key (`id`)
+)engine=InnoDB default charset=utf8;
+
+
+# 删除表
+drop table girls;
+
