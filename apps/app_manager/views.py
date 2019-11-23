@@ -24,8 +24,8 @@ def manager_register():
         return jsonify({"code": 200, "msg": u"pwd parameter error"})
 
     # 查找是否已经有相同user的会员
-    user = get_users(user)
-    if len(user) != 0:
+    users = get_users(user)
+    if len(users) != 0:
         return jsonify({"code": 200, "msg": u"user already exists"})
     # 没有即新增会员信息
     affected = insert_user(user, pwd, nick)
@@ -36,7 +36,7 @@ def manager_register():
 @manager_blue.route('/getuser', methods=['get', 'post'])
 def get_user():
     users = get_users('')
-    return jsonify({"code": 200, "msg": u"成功", "data": users})
+    return jsonify({"code": 200, "msg": "success", "data": users})
 
 
 
