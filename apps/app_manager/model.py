@@ -6,7 +6,7 @@ import datetime
 def get_users(user):
     sql = 'select * from girls where status != 1001'
     if user:
-        sql += ' and user = {}'.format(user)
+        sql += ' and name = {}'.format(user)
     cursor.execute(sql)
     users = cursor.fetchall()
     cursor.close()
