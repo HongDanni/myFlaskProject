@@ -10,9 +10,9 @@ def test():
     return 'welcome to login'
 
 
-@login_blue.route('/index', methods=['get'])
+@login_blue.route('/index', methods=['get'])  # get访问
 def index():
-    return render_template('login/login.html')
+    return render_template('login/login.html')  # 模板渲染
 
 
 @login_blue.route('/hello', methods=['get'])

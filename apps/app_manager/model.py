@@ -4,14 +4,16 @@ import datetime
 import pymysql
 
 
+# 根据用户名user获取对应的用户信息；如果user为空，则获取所有用户信息
 def get_users(user):
     sql = 'select * from girls where status != 1001'
     if user:
         sql += ' and name = %a' % user
+    # 数据库的连接参数在libs/db.py设置
     cursor = db.cursor(cursor=pymysql.cursors.DictCursor)  # 返回{}或[{}, {}, ...]
     cursor.execute(sql)
     users = cursor.fetchall()
-    cursor.close()
+    cursor.close()  # 记得要关闭
     return users
 
 

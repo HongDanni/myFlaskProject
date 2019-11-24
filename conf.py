@@ -8,7 +8,7 @@ class Config(object):
     DB_HOST = '127.0.0.1'  # 数据库IP
     # DB_HOST = '139.224.10.202'  # 数据库IP
 
-    DB_PORT = 3306  # 数据库端口
+    DB_PORT = 3306  # 数据库端口(mysql默认为：3306)
     DB_UN = ''  # 数据库账号名
     DB_PW = ''  # 数据库密码
 
@@ -41,8 +41,8 @@ class DevelopConfig(Config):
     """
     开发环境
     """
-    PORT = 8082  # flask端口
-    HOST = '0.0.0.0'  # flask绑定ip
+    PORT = 8082  # flask端口；flask默认监听本地127.0.0.1:5000
+    HOST = '0.0.0.0'  # flask绑定ip；0.0.0.0表示监听所有地址
 
 
 # 自动判断环境生产config

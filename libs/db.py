@@ -10,4 +10,3 @@ db = pymysql.connect(host=conf.DB_HOST, port=conf.DB_PORT, user=conf.DB_UN, pass
 cursor = db.cursor(cursor=pymysql.cursors.DictCursor)  # 返回{}或[{}, {}, ...]
 # cursor = db.cursor()  # 返回()或((), (), ...)
 
-#
