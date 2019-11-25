@@ -9,8 +9,8 @@ class Config(object):
     # DB_HOST = '139.224.10.202'  # 数据库IP
 
     DB_PORT = 3306  # 数据库端口(mysql默认为：3306)
-    DB_UN = ''  # 数据库账号名
-    DB_PW = ''  # 数据库密码
+    DB_UN = 'root'  # 数据库账号名
+    DB_PW = '123456'  # 数据库密码
 
     # R_HOST = '127.0.0.1'  # Redis IP地址
     # R_PORT = 6379  # Redis 端口
